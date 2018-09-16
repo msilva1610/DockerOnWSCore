@@ -5,6 +5,11 @@
 ```
 get-childitem * -include *.dll,*.exe | foreach-object { "{0}`t{1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).FileVersion }
 ```
+### Ver as versões das dlls com um comando mais simplificado
+```
+dir *.exe | %{ $_.VersionInfo }
+```
+
 ### Abrir uma nova janela do powershell
 
 ```
